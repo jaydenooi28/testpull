@@ -1,0 +1,19 @@
+name: Pull Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Pull Docker Image
+      run: docker pull jaydenooi28/tlog:latest
+
+    # Add more steps here for your specific tasks, such as running containers, tests, etc.
